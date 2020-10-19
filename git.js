@@ -17,3 +17,15 @@ for (let i = 0; i < secrettext.length; i++) {
 
 CountChar(file, counter);
 console.log('count', counter);
+
+const keys = Object.keys(counter)
+console.log('keys', keys);
+
+const arr = []
+
+for (let i = 0; i < keys.length; i++) {
+    arr.push({ char: keys[i], count: count[keys[i]]});
+}
+
+arr.sort((x, y) => y.count -x.count);
+console.log(arr);
