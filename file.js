@@ -18,3 +18,16 @@ const countChars = (encrypted, count) => {
 countChars(file, count);
 
 console.log('count', count);
+
+const keys = Object.keys(count);
+console.log('keys', keys);
+
+const arr = [];
+for (let i = 0; i < keys.length; i++) {
+    arr.push({char: keys[i], count: count[keys[i]]});
+};
+
+console.log('arr', arr);
+
+arr.sort((x, y) => y.count - x.count);
+console.log('arr', arr);
