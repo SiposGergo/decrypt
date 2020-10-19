@@ -20,4 +20,12 @@ const count = (file, alphabets) => {
 }
 
 count(file, alphabets);
-console.log(alphabets)
+const keys = Object.keys(alphabets);
+
+const arr=[];
+for(let i=0;i<keys.length;i++){
+    arr.push({char:keys[i], count: alphabets[keys[i]]});
+}
+
+arr.sort((x,y)=>y.count-x.count);
+console.log(arr);
