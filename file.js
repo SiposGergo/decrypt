@@ -27,5 +27,18 @@ const arr = [];
 for (let i = 0; i < keys.length; i++) {
   arr.push({ char: keys[i], count: count[keys[i]] });
 }
-arr.sort((x, y) => y.count - x.count);
-console.log('arr', arr);
+// arr.sort((x, y) => y.count - x.count);
+
+const bubbleSort = (arr) => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      if (arr[j].count < arr[j + 1].count) {
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+};
+bubbleSort(arr);
+console.log(arr);
